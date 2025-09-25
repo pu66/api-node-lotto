@@ -22,10 +22,11 @@ Object.keys(ips).forEach(function (_interface) {
   });
 });
 
-app.listen(port, () => {
-  console.log(` API listening at http://${ip}:${port}`);
+const PORT = process.env.PORT || 3000;
+// listen server
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(` API listening at http://0.0.0.0:${PORT}`);
 });
-
 const db = mysql.createConnection({
   host: "202.28.34.203",
   port: 3306,
